@@ -13,17 +13,17 @@ const images = [
   },
 ];
 
-const galleryCard = ({url, alt}) => {
+const galleryCardEl = ({url, alt}) => {
   return `
-  <li class = "gallery__item">
+  <li class = "gallery__item" >
     <img src = "${url}" alt = ${alt} class = "gallery__image" >
   </li>
   `
 };
-// console.log(galleryCard(images[0]));
+// console.log(galleryCardEl(images[0]));
 
 
-const gallery = arr => arr.map(card => galleryCard(card)).join("");
+const gallery = arr => arr.map(card => galleryCardEl(card)).join("");
 console.log(gallery(images));
 
 
@@ -32,7 +32,19 @@ const galleryEl = document.querySelector(".gallery");
 galleryEl.insertAdjacentHTML("afterbegin", gallery(images));
 
 
-//*Styles
+//?Styles
 
 galleryEl.style.display = "flex";
-galleryEl.style.gap = "20px"
+galleryEl.style.gap = "20px";
+galleryEl.style.padding = "20px";
+galleryEl.style.outline = "2px dotted violet";
+galleryEl.style.width = "100%";
+galleryEl.style.borderRadius = "10px";
+galleryEl.style.justifyContent = "center";
+
+const picture = galleryEl.querySelectorAll(".gallery__image");
+console.log(picture);
+picture.forEach(element => {
+  element.style.cssText = "width:400px; height: 275px; list-style: none";
+  element.parentNode.style.listStyle = "none";
+});
