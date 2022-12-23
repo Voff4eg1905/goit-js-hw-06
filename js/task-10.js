@@ -19,6 +19,12 @@ const onCreateButtonClick = event => {
   createBoxes(numberOfCopies);
 }
 
+const onResetButtonClick = event => {
+  divToFillEl.innerHTML = "";
+  inputEl.value = 0;
+}
+
+
 function createBoxes (number) {
   console.log(number);
   const divsArr = [];
@@ -35,8 +41,10 @@ function createBoxes (number) {
  }
 
  console.log(divsArr[1].style.backgroundColor);
- divToFillEl.prepend(...divsArr)
+ divToFillEl.prepend(...divsArr);
 }
 
 
+
 createButtonEl.addEventListener("click", onCreateButtonClick);
+resetButtonEl.addEventListener("click", onResetButtonClick)

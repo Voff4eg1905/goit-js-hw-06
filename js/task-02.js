@@ -15,11 +15,11 @@ const createCard = title => {
   return itemEl;
 }
 
-// console.log(createCard(ingredients[1]));
+
 
 
 const collection = ingredients => ingredients.map(ingredient => createCard(ingredient));
 collection(ingredients)
 const listToFill = document.querySelector('#ingredients')
-// console.log(listToFill);
+
 listToFill.append(...collection(ingredients));
