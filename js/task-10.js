@@ -20,9 +20,19 @@ const onCreateButtonClick = event => {
 
 function createBoxes (number) {
   console.log(number);
+  const divsArr = [];
+  let width = 30;
+  let height = 30;
  for (let i = 0; i < number; i +=1) {
-  console.log(i);
+  const newDiv = document.createElement("div");
+  newDiv.style.width = `${width}px`;
+  newDiv.style.height = `${height}px`
+  divsArr.push(newDiv);
+  height += 10;
+  width +=10;
  }
+
+ console.log(divsArr[1].style.height);
 }
 
 
