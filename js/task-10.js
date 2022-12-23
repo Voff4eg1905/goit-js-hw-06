@@ -4,7 +4,8 @@ function getRandomHexColor() {
 
 const inputEl = document.querySelector("input");
 const createButtonEl = document.querySelector("button[data-create]");
-const resetButtonEl = document.querySelector("button[data-destroy]")
+const resetButtonEl = document.querySelector("button[data-destroy]");
+const divToFillEl = document.querySelector("#boxes");
 
 
 
@@ -33,7 +34,8 @@ function createBoxes (number) {
   width +=10;
  }
 
- console.log(divsArr[1].style.height);
+ console.log(divsArr[1].style.backgroundColor);
+ divToFillEl.prepend(...divsArr)
 }
 
 
