@@ -26,7 +26,8 @@ function createBoxes (number) {
  for (let i = 0; i < number; i +=1) {
   const newDiv = document.createElement("div");
   newDiv.style.width = `${width}px`;
-  newDiv.style.height = `${height}px`
+  newDiv.style.height = `${height}px`;
+  newDiv.style.backgroundColor = getRandomHexColor();
   divsArr.push(newDiv);
   height += 10;
   width +=10;
